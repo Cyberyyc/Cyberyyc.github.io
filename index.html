@@ -99,7 +99,7 @@
         style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
       >
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        AR-based visual interface overlaid onto the real-world. 
       </h2>
     </div>
   </div>
@@ -113,7 +113,30 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+           This paper focuses on the scalable robot learning for
+ manipulation in the dexterous robot arm-hand systems, where the
+ remote human-robot interactions via augmented reality (AR) are
+ established to collect the expert demonstration data for enhancing
+ the system robustness. In such a system, we present a unified
+ framework to address the general manipulation task problem.
+ Specifically, the proposed algorithm consists of two phases: i)
+ In the first phase for pretraining, the efficient policy is created
+ in a behavior cloning manner, through leveraging the learning
+ data from our AR-based remote human-robot interaction system;
+ ii) In the second phase, a contrastive learning empowered RL
+ method is developed to obtain more efficient policy and thus a
+ projection head is designed to accelerate the learning progress.
+ An event-driven augmented reward is adopted for enhancing
+ the safety. To validate the efficacy of the proposed algorithm,
+ both the physics simulations via PyBullet and real-world trials
+ are carried out. The results demonstrate that compared to the
+ proximal policy optimization and soft actor-critic policies, the
+ proposed model-free algorithm not only significantly reduces the
+ training time, but also achieves much better performance in terms
+ of the success rate for completing the manipulation tasks. By
+ conducting the ablation study, it is confirmed that the proposed
+ RLmethodwithcontrastive learning can well overcome the policy
+ collapse.
           </p>
         </div>
       </div>
