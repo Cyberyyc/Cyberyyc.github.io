@@ -45,71 +45,25 @@
   <script src="static/js/index.js"></script>
   
   <style>
-    /* 整体背景优化 */
-    body {
-      background: linear-gradient(135deg, #0c1e3e, #1a2a6c, #0c1e3e);
-      color: #f0f0f0;
+     body {
+      background: #ffffff;
+      color: #333333;
       font-family: 'Google Sans', 'Noto Sans', sans-serif;
       min-height: 100vh;
-      background-attachment: fixed;
-      position: relative;
-      overflow-x: hidden;
-    }
-    
-    /* 科技感背景效果 */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        radial-gradient(circle at 10% 20%, rgba(52, 152, 219, 0.1) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(231, 76, 60, 0.1) 0%, transparent 20%),
-        radial-gradient(circle at 30% 50%, rgba(46, 204, 113, 0.05) 0%, transparent 30%);
-      z-index: -1;
-    }
-    
-    /* 添加网格线增强科技感 */
-    body::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        linear-gradient(rgba(52, 152, 219, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(52, 152, 219, 0.1) 1px, transparent 1px);
-      background-size: 40px 40px;
-      z-index: -1;
-      opacity: 0.3;
+      line-height: 1.6;
     }
     
     /* 标题区优化 */
     .hero {
-      background: transparent !important;
+      background: #f8f9fa !important;
       position: relative;
       overflow: hidden;
       padding-top: 3rem;
-    }
-    
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(10, 25, 47, 0.8);
-      z-index: -1;
-      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      border-bottom: 1px solid #eaeaea;
     }
     
     .publication-title {
-      color: #fff;
-      text-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+      color: #2c3e50;
       font-weight: 700;
       letter-spacing: -0.5px;
       margin-bottom: 1rem;
@@ -127,13 +81,13 @@
     }
     
     .publication-authors {
-      color: #c5d1eb;
+      color: #555;
       font-size: 1.2rem;
       margin-bottom: 1.5rem;
     }
     
     .institution {
-      color: #8aa2d3;
+      color: #777;
       font-style: italic;
       margin-top: 0.5rem;
     }
@@ -150,8 +104,8 @@
       font-weight: 600;
       padding: 0.8rem 1.8rem;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      background: linear-gradient(45deg, #3498db, #2c3e50);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      background: #2c3e50;
       color: white;
       position: relative;
       overflow: hidden;
@@ -159,49 +113,22 @@
     
     .button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-      background: linear-gradient(45deg, #2c3e50, #3498db);
-    }
-    
-    .button::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: 0.5s;
-    }
-    
-    .button:hover::before {
-      left: 100%;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      background: #1a2a6c;
     }
     
     /* 内容区优化 */
     .section {
-      background: rgba(15, 30, 55, 0.7);
-      border-radius: 15px;
+      background: #ffffff;
+      border-radius: 8px;
       margin: 2rem auto;
       padding: 2.5rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(52, 152, 219, 0.2);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .section::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(to right, #3498db, #e74c3c);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid #eaeaea;
     }
     
     .title {
-      color: #3498db;
+      color: #2c3e50;
       margin-bottom: 1.5rem;
       position: relative;
       padding-bottom: 0.5rem;
@@ -219,11 +146,11 @@
     }
     
     .subtitle {
-      color: #a8c6f8;
+      color: #555;
     }
     
     .content p, .content li {
-      color: #d0d8e8;
+      color: #444;
       line-height: 1.8;
     }
     
@@ -235,47 +162,49 @@
     .carousel {
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-      border: 1px solid rgba(52, 152, 219, 0.3);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border: 1px solid #eaeaea;
     }
     
     .carousel-item {
-      padding: 1rem;
-      background: rgba(20, 35, 60, 0.5);
+      padding: 1.5rem;
+      background: #fff;
     }
     
     .video-caption {
       text-align: center;
       margin-top: 1rem;
-      color: #8aa2d3;
+      color: #555;
       font-weight: 500;
-      background: rgba(10, 20, 40, 0.5);
-      padding: 0.5rem;
+      background: #f8f9fa;
+      padding: 0.8rem;
       border-radius: 5px;
     }
     
     /* 图片和视频样式 */
     img {
       border-radius: 8px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(52, 152, 219, 0.2);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      border: 1px solid #eaeaea;
     }
     
     video {
       border-radius: 8px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(52, 152, 219, 0.2);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      border: 1px solid #eaeaea;
+      background: #f8f9fa;
     }
     
     /* BibTeX 部分 */
     #BibTeX {
-      background: rgba(10, 25, 47, 0.8);
+      background: #f8f9fa;
+      border-radius: 8px;
     }
     
     pre {
-      background: rgba(5, 15, 30, 0.7) !important;
-      color: #a8c6f8 !important;
-      border: 1px solid rgba(52, 152, 219, 0.3);
+      background: #f8f9fa !important;
+      color: #333 !important;
+      border: 1px solid #eaeaea;
       border-radius: 8px;
       padding: 1.5rem;
       overflow-x: auto;
@@ -290,10 +219,23 @@
       .section {
         padding: 1.5rem;
       }
-      
-      .hero::before {
-        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-      }
+    }
+    
+    /* 分隔线样式 */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #eaeaea, transparent);
+      margin: 3rem 0;
+    }
+    
+    /* 视频轮播区样式 */
+    .video-section {
+      margin-top: 2rem;
+    }
+    
+    .video-section .title {
+      text-align: center;
+      margin-bottom: 2rem;
     }
   </style>
 </head>
