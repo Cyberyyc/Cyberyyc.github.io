@@ -99,6 +99,33 @@ body {
     border-radius: 10px !important;
 }
 
+
+/* 视频标题样式 */
+.video-caption {
+  margin-top: 0.5rem; /* 与视频保持一定距离 */
+  text-align: center; /* 文字居中 */
+  font-size: 1rem; /* 字体大小 */
+  color: #333; /* 文字颜色 */
+  font-weight: 500; /* 字体粗细 */
+  padding: 0 1rem; /* 左右内边距 */
+}
+
+/* 确保轮播项容器能正确包裹视频和标题 */
+.carousel .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 视频容器样式，避免视频溢出 */
+.carousel .item video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px; /* 可选：添加圆角 */
+}
+
+
 .publication-video iframe {
     position: absolute;
     top: 0;
