@@ -104,7 +104,6 @@
     </div>
   </div>
 </section>
-
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -113,30 +112,38 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-           This paper focuses on the scalable robot learning for
- manipulation in the dexterous robot arm-hand systems, where the
- remote human-robot interactions via augmented reality (AR) are
- established to collect the expert demonstration data for enhancing
- the system robustness. In such a system, we present a unified
- framework to address the general manipulation task problem.
- Specifically, the proposed algorithm consists of two phases: i)
- In the first phase for pretraining, the efficient policy is created
- in a behavior cloning manner, through leveraging the learning
- data from our AR-based remote human-robot interaction system;
- ii) In the second phase, a contrastive learning empowered RL
- method is developed to obtain more efficient policy and thus a
- projection head is designed to accelerate the learning progress.
- An event-driven augmented reward is adopted for enhancing
- the safety. To validate the efficacy of the proposed algorithm,
- both the physics simulations via PyBullet and real-world trials
- are carried out. The results demonstrate that compared to the
- proximal policy optimization and soft actor-critic policies, the
- proposed model-free algorithm not only significantly reduces the
- training time, but also achieves much better performance in terms
- of the success rate for completing the manipulation tasks. By
- conducting the ablation study, it is confirmed that the proposed
- RLmethodwithcontrastive learning can well overcome the policy
- collapse.
+            This paper focuses on the scalable robot learning for manipulation in the dexterous robot arm-hand systems, 
+            where the remote human-robot interactions via augmented reality (AR) are established to collect the expert 
+            demonstration data for enhancing the system robustness.
+          </p>
+          
+          <p>
+            In such a system, we present a unified framework to address the general manipulation task problem. 
+            Specifically, the proposed algorithm consists of two phases:
+          </p>
+          
+          <ol>
+            <li>
+              In the first phase for pretraining, the efficient policy is created in a behavior cloning manner, 
+              through leveraging the learning data from our AR-based remote human-robot interaction system;
+            </li>
+            <li>
+              In the second phase, a contrastive learning empowered RL method is developed to obtain more efficient policy 
+              and thus a projection head is designed to accelerate the learning progress. An event-driven augmented reward 
+              is adopted for enhancing the safety.
+            </li>
+          </ol>
+          
+          <p>
+            To validate the efficacy of the proposed algorithm, both the physics simulations via PyBullet and real-world 
+            trials are carried out. The results demonstrate that compared to the proximal policy optimization and soft 
+            actor-critic policies, the proposed model-free algorithm not only significantly reduces the training time, 
+            but also achieves much better performance in terms of the success rate for completing the manipulation tasks.
+          </p>
+          
+          <p>
+            By conducting the ablation study, it is confirmed that the proposed RL method with contrastive learning can 
+            well overcome the policy collapse.
           </p>
         </div>
       </div>
