@@ -44,6 +44,258 @@
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
   
+  <style>
+    /* 整体背景优化 */
+    body {
+      background: linear-gradient(135deg, #0c1e3e, #1a2a6c, #0c1e3e);
+      color: #f0f0f0;
+      font-family: 'Google Sans', 'Noto Sans', sans-serif;
+      min-height: 100vh;
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    /* 科技感背景效果 */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(52, 152, 219, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(231, 76, 60, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 30% 50%, rgba(46, 204, 113, 0.05) 0%, transparent 30%);
+      z-index: -1;
+    }
+    
+    /* 添加网格线增强科技感 */
+    body::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(52, 152, 219, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(52, 152, 219, 0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: -1;
+      opacity: 0.3;
+    }
+    
+    /* 标题区优化 */
+    .hero {
+      background: transparent !important;
+      position: relative;
+      overflow: hidden;
+      padding-top: 3rem;
+    }
+    
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 25, 47, 0.8);
+      z-index: -1;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+    
+    .publication-title {
+      color: #fff;
+      text-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    
+    .publication-title::after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(to right, #3498db, #e74c3c);
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
+    
+    .publication-authors {
+      color: #c5d1eb;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .institution {
+      color: #8aa2d3;
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+    
+    .eql-cntrb {
+      color: #e74c3c;
+      font-weight: 500;
+    }
+    
+    /* 按钮优化 */
+    .button {
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      padding: 0.8rem 1.8rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(45deg, #3498db, #2c3e50);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      background: linear-gradient(45deg, #2c3e50, #3498db);
+    }
+    
+    .button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+    
+    .button:hover::before {
+      left: 100%;
+    }
+    
+    /* 内容区优化 */
+    .section {
+      background: rgba(15, 30, 55, 0.7);
+      border-radius: 15px;
+      margin: 2rem auto;
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(52, 152, 219, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, #3498db, #e74c3c);
+    }
+    
+    .title {
+      color: #3498db;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    .title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(to right, #3498db, #e74c3c);
+      border-radius: 3px;
+    }
+    
+    .subtitle {
+      color: #a8c6f8;
+    }
+    
+    .content p, .content li {
+      color: #d0d8e8;
+      line-height: 1.8;
+    }
+    
+    .content ol li {
+      margin-bottom: 0.8rem;
+    }
+    
+    /* 轮播图优化 */
+    .carousel {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(52, 152, 219, 0.3);
+    }
+    
+    .carousel-item {
+      padding: 1rem;
+      background: rgba(20, 35, 60, 0.5);
+    }
+    
+    .video-caption {
+      text-align: center;
+      margin-top: 1rem;
+      color: #8aa2d3;
+      font-weight: 500;
+      background: rgba(10, 20, 40, 0.5);
+      padding: 0.5rem;
+      border-radius: 5px;
+    }
+    
+    /* 图片和视频样式 */
+    img {
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(52, 152, 219, 0.2);
+    }
+    
+    video {
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(52, 152, 219, 0.2);
+    }
+    
+    /* BibTeX 部分 */
+    #BibTeX {
+      background: rgba(10, 25, 47, 0.8);
+    }
+    
+    pre {
+      background: rgba(5, 15, 30, 0.7) !important;
+      color: #a8c6f8 !important;
+      border: 1px solid rgba(52, 152, 219, 0.3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      overflow-x: auto;
+    }
+    
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+      .publication-title {
+        font-size: 1.8rem;
+      }
+      
+      .section {
+        padding: 1.5rem;
+      }
+      
+      .hero::before {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      }
+    }
+  </style>
 </head>
 
   
@@ -163,7 +415,7 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/system.png" alt="MY ALT TEXT"/>
+        <img src="static/images/system.png" alt="Design structure of the proposed algorithm"/>
         <h2 class="subtitle has-text-centered">
           Design structure of the proposed algorithm:
 Differing from the existing algorithms,
@@ -173,7 +425,7 @@ and augmented RL policy with the help of projection head.
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/projection head.png" alt="MY ALT TEXT"/>
+        <img src="static/images/projection head.png" alt="The proposed projection head"/>
         <h2 class="subtitle has-text-centered">
           The proposed projection head for improving the sample-efficiency and preventing the policy collapse in the actor network.
         </h2>
